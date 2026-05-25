@@ -1,6 +1,6 @@
 "use client";
 
-import { assets } from "@/assets/assets";
+import { useUser } from "@clerk/nextjs";
 import {
   HomeIcon,
   ShieldCheckIcon,
@@ -12,6 +12,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const AdminSidebar = () => {
+  const { user } = useUser();
   const pathname = usePathname();
 
   const sidebarLinks = [
@@ -26,12 +27,12 @@ const AdminSidebar = () => {
       <div className="max-sm:hidden flex flex-col justify-center items-center gap-3 pt-8">
         <Image
           className="rounded-full w-14 h-14"
-          src={assets.gs_logo}
+          src={user.imageUrl}
           alt=""
           width={80}
           height={80}
         />
-        <p className="text-slate-700">Hi, GreatStack</p>
+        <p className="text-slate-700">{user.fullName}</p>
       </div>
 
       <div className="max-sm:mt-6">
