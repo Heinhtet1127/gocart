@@ -1,9 +1,5 @@
-
 export default function PricingPage() {
-    return (
-        <div className='mx-auto max-w-[700px] my-28'>
-            {/* Pricing Table */}
-
-        </div>
-    )
+  return (
+    <div className="mx-auto my-28 max-w-[700px]">{/* Pricing Table */}</div>
+  );
 }
